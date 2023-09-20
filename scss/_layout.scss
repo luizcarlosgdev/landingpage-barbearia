@@ -1,0 +1,263 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* se der algum erro no css pode ser aqui, olhar codigo do mateus */
+.bg-home {
+
+  background-image: linear-gradient(to bottom, #06121e34, #06121E), url('../imagens/bg.svg');
+  background-size: cover;
+  background-position: top
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  h1 {
+    color: $branco-normal;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    font-size: 25px;
+  }
+
+  p {
+    color: white;
+    padding-bottom: 30px;
+  }
+
+}
+
+.button-contact {
+  background-color: $red-normal;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.button-contact:hover {
+  animation: buttonPulse 0.5s infinite alternate;
+  transition: all .5s ease-in-out;
+}
+
+@keyframes buttonPulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    h1 {
+      font-size: 40px;
+    }
+
+    p {
+      padding-bottom: 50px;
+
+    }
+  }
+}
+
+/* seção sobre */
+
+.about {
+  background-color: #06121E;
+  color: $branco-normal;
+  overflow: hidden; /* importante? */
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 40px 20px;
+
+  img {
+    max-width: 95%;
+  }
+}
+
+.about-content div {
+  flex: 1;
+}
+
+.about-description {
+  h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+  }
+}
+
+.services {
+  background-color: $branco-normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.services-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    width: 95%;
+    text-align: justify;
+    line-height: 150%;
+    margin-bottom: 20px;
+  }
+}
+
+.cortes-cabelo {
+  display: flex;
+  flex-direction: column;
+  max-width: 95%;
+  gap: 20px;
+}
+
+.corte {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 5px 12px 0px rgba(0, 0, 0, 0.555);
+  border-radius: 5px;
+  overflow: hidden;
+  
+
+  img {
+    transition: transform .5s ease-in-out
+  }
+}
+
+.corte img:hover {
+  z-index: 1;
+  transform: scale(1.2);
+}
+
+.corte-info {
+  z-index: 99;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $branco-normal;
+
+  button {
+    background-color: $red-normal;
+    border: none;
+    color: $branco-normal;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    cursor: default;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cortes-cabelo {
+    flex-direction: row;
+    padding: 50px;
+  }
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $branco-normal;
+  gap: 20px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer > div {
+  display: flex;
+  gap: 8px;
+}
+
+
+
+/* button whatsap */
+
+.btn-whatsapp {
+  position: fixed;
+  display: absolute;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99;
+
+  img {
+    max-width: 50px;
+    transition: transform .3s ease-in-out
+  }
+
+  img:hover {
+    transform: scale(1.05)
+  }
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  right: 60px;
+  bottom: 10px;
+  padding: 10px;
+  width: 120px;
+  font-size: 15px;
+  border-radius: 8px;
+  color: $branco-normal;
+  background-color: $secundaria-dark;
+  opacity: 0;
+  transition: opacity .5s ease-in-out
+}
+
+.btn-whatsapp:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@media screen and (min-width: 768px) {
+  .btn-whatsapp {
+    img {
+      max-width: 70px;
+    }
+
+    .tooltip-text {
+      right: 80px;
+      padding: 15px;
+      width: 130px;
+    }
+  }
+}
